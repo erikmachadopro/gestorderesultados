@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>DASHMIN - Bootstrap Admin Template</title>
+    <title>Gestor de Resultados</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -36,7 +36,7 @@
         <!-- Spinner Start -->
         <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
             <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
+                <span class="sr-only">Carregando...</span>
             </div>
         </div>
         <!-- Spinner End -->
@@ -46,7 +46,7 @@
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-light navbar-light">
                 <a href="index.html" class="navbar-brand mx-4 mb-3">
-                    <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i>DASHMIN</h3>
+                    <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i>GESTOR</h3>
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
@@ -54,12 +54,35 @@
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
-                        <h6 class="mb-0">Jhon Doe</h6>
+                        <h6 class="mb-0">Usúario</h6>
                         <span>Admin</span>
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
                     <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+
+                    <a href="tabulacao.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Tabulação</a>
+                    <a href="projecao.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Projeção RV</a>
+                    <a href="#" class="nav-item nav-link"><i class="fa fa-th me-2"></i>-</a>
+                    
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Painel Operador</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="#" class="dropdown-item">Tabulação</a>
+                            <a href="#" class="dropdown-item">Projeção RV</a>
+                            <a href="#" class="dropdown-item">-</a>
+                        </div>
+                    </div>
+
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Painel Gestor</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="#" class="dropdown-item">-</a>
+                            <a href="#" class="dropdown-item">-</a>
+                            <a href="#" class="dropdown-item">-</a>
+                        </div>
+                    </div>
+                    
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
                         <div class="dropdown-menu bg-transparent border-0">
@@ -85,8 +108,7 @@
             </nav>
         </div>
         <!-- Sidebar End -->
-
-
+        
         <!-- Content Start -->
         <div class="content">
             <!-- Navbar Start -->
@@ -179,271 +201,332 @@
             </nav>
             <!-- Navbar End -->
 
+            <!-- Painel de Resultados -->
+            <div class="col-sm-12 col-xl-12">
+                <div class="bg-light rounded h-100 p-4">
+                    <h6 class="mb-4">Resultados</h6>
+                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
+                                aria-selected="true">Diário</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-profile" type="button" role="tab"
+                                aria-controls="pills-profile" aria-selected="false">Acumulado</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-contact" type="button" role="tab"
+                                aria-controls="pills-contact" aria-selected="false">Previsto</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                            <div class="row g-4">
+                                <div class="col-sm-3 col-xl-2">
+                                    <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                                        <i class="fas fa-phone-volume fa-2x text-primary"></i>
+                                        <div class="ms-3">
+                                            <p class="mb-2">Atendidas</p>
+                                            <h6 class="mb-0">3</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 col-xl-2">
+                                    <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                                         <i class="fa fa-chart-bar fa-2x text-primary"></i>
+                                        <div class="ms-3">
+                                            <p class="mb-2">Ofertas</p>
+                                            <h6 class="mb-0">2</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 col-xl-2">
+                                    <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                                        <i class="fas fa-phone-slash fa-2x text-primary"></i>
+                                        <div class="ms-3">
+                                            <p class="mb-2"><small>Canceladas</small> </p>
+                                            <h6 class="mb-0">0</h6>
+                                        </div>
+                                    </div>
+                                </div> 
+                                <div class="col-sm-3 col-xl-2">
+                                    <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                                        <i class="fa fa-chart-pie fa-2x text-primary"></i>
+                                        <div class="ms-3">
+                                            <p class="mb-2">Multa</p>
+                                            <h6 class="mb-0">0</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 col-xl-2">
+                                    <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                                        <i class="fas fa-tty fa-2x text-primary"></i>
+                                        <div class="ms-3">
+                                            <p class="mb-2">Faltam</p>
+                                            <h6 class="mb-0">17</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 col-xl-2">
+                                    <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                                        <i class="fas fa-chart-line fa-2x text-primary"></i>
+                                        <div class="ms-3">
+                                            <p class="mb-2">Quartil</p>
+                                            <h6 class="mb-0">1º</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>
+                                                             
+                        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                            <div class="row g-4">
+                                <div class="col-sm-3 col-xl-2">
+                                    <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                                        <i class="fas fa-phone-volume fa-2x text-primary"></i>
+                                        <div class="ms-3">
+                                            <p class="mb-2">Atendidas</p>
+                                            <h6 class="mb-0">240</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 col-xl-2">
+                                    <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                                         <i class="fa fa-chart-bar fa-2x text-primary"></i>
+                                        <div class="ms-3">
+                                            <p class="mb-2">Ofertas</p>
+                                            <h6 class="mb-0">26</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 col-xl-2">
+                                    <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                                        <i class="fas fa-phone-slash fa-2x text-primary"></i>
+                                        <div class="ms-3">
+                                            <p class="mb-2"><small>Canceladas</small> </p>
+                                            <h6 class="mb-0">50</h6>
+                                        </div>
+                                    </div>
+                                </div> 
+                                <div class="col-sm-3 col-xl-2">
+                                    <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                                        <i class="fa fa-chart-pie fa-2x text-primary"></i>
+                                        <div class="ms-3">
+                                            <p class="mb-2">Multa</p>
+                                            <h6 class="mb-0">0</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 col-xl-2">
+                                    <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                                        <i class="fas fa-tty fa-2x text-primary"></i>
+                                        <div class="ms-3">
+                                            <p class="mb-2">Faltam</p>
+                                            <h6 class="mb-0">60</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 col-xl-2">
+                                    <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                                        <i class="fas fa-chart-line fa-2x text-primary"></i>
+                                        <div class="ms-3">
+                                            <p class="mb-2">Quartil</p>
+                                            <h6 class="mb-0">4º</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>
 
-            <!-- Sale & Revenue Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-line fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Today Sale</p>
-                                <h6 class="mb-0">$1234</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-bar fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Total Sale</p>
-                                <h6 class="mb-0">$1234</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-area fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Today Revenue</p>
-                                <h6 class="mb-0">$1234</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-pie fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Total Revenue</p>
-                                <h6 class="mb-0">$1234</h6>
-                            </div>
+                        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                            <div class="row g-4">
+                                <div class="col-sm-3 col-xl-3">
+                                    <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                                        <i class="fas fa-phone-volume fa-2x text-primary"></i>
+                                        <div class="ms-3">
+                                            <p class="mb-2">Teste 1</p>
+                                            <h6 class="mb-0">3</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 col-xl-3">
+                                    <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                                         <i class="fa fa-chart-bar fa-2x text-primary"></i>
+                                        <div class="ms-3">
+                                            <p class="mb-2">teste</p>
+                                            <h6 class="mb-0">2</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 col-xl-3">
+                                    <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                                        <i class="fas fa-chart-line fa-2x text-primary"></i>
+                                        <div class="ms-3">
+                                            <p class="mb-2">Quartil</p>
+                                            <h6 class="mb-0">1º</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Sale & Revenue End -->
+          <!-- Painel de Resultados -->
 
+          <!-- Form Start -->
+            <div class="container-fluid pt-4 px-4">               
+                <div class="row g-4">          
+                    <div class="col-sm-12 col-xl-4">
+                        <div class="bg-light rounded h-100 p-4">
+                            <form>
+                                <h6 class="mb-4">Resultados</h6>
+                                <div class="row mb-3">                                
+                                    <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example">
+                                        <option selected>Motivo da Ligação</option>
+                                        <option value="41">Não localizado</option>
+                                        <option disabled style="color: #555; background-color: #ddd"># Improdutiva</option>
+                                        <option value="1">Bad call, resultado telefonia ou não aplicável</option>
+                                        <option disabled style="color: #555; background-color: #ddd"># Problema técnico</option>
+                                        <option value="2">Área de risco</option>
+                                        <option value="3">Falha Massiva ou Roubo de cabos</option>
+                                        <option value="4">Não recebe velocidade contratada</option>
+                                        <option value="5">TV - Ausência de sinal ou qualidade da imagem ruim</option>
+                                        <option value="6">Wi-fi não funciona ou não pega em todos aparelhos</option>
+                                        <option disabled style="color: #555; background-color: #ddd"># Concorrência</option>
+                                        <option value="7">Qualidade do serviço é melhor</option>
+                                        <option value="8">Não consegue portar o fixo da concorrente</option>
+                                        <option value="9">Pacote mais atrativo (Móvel, TV, Combo)</option>
+                                        <option value="10">Preço mais atrativo</option>
+                                        <option value="11">Vai usar apenas dados móveis</option>
+                                        <option value="12">Velocidade da Internet maior</option>
+                                        <option disabled style="color: #555; background-color: #ddd"># Indisponibilidade de combo</option>
+                                        <option value="13">Sem viabilidade da Banda Larga para upgrade</option>
+                                        <option disabled style="color: #555; background-color: #ddd"># Desistência</option>
+                                        <option value="14">Cancelamento indevido ou desistência do cancelamento</option>
+                                        <option disabled style="color: #555; background-color: #ddd"># Utiliza pouco</option>
+                                        <option value="15">Pouca utilização</option>
+                                        <option disabled style="color: #555; background-color: #ddd"># Mudança de endereço</option>
+                                        <option value="16">Ainda não tem o novo endereço ou Não quis informar</option>
+                                        <option value="17">Mudança de DDD ou estado ou país</option>
+                                        <option value="18">Mudança de endereço solicitada</option>
+                                        <option value="19">Novo endereço COM viabilidade técnica</option>
+                                        <option value="20">Novo endereço SEM viabilidade técnica</option>
+                                        <option disabled style="color: #555; background-color: #ddd"># Problemas na venda</option>
+                                        <option value="21">Valor diferente do negociado</option>
+                                        <option value="22">Benefício diferente do negociado</option>
+                                        <option value="23">Queria migrar Fibra atual ou Adicionar UGR feita nova venda</option>
+                                        <option value="24">Queria migrar de Cobre para Fibra feita nova venda</option>
+                                        <option value="26">Desconhece o produto</option>
+                                        <option disabled style="color: #555; background-color: #ddd"># Não instalados</option>
+                                        <option value="27">Produto ativo no sistema mas não instalado</option>
+                                        <option disabled style="color: #555; background-color: #ddd"># Bloqueio</option>
+                                        <option value="28">Cancelamento linha bloqueada</option>
+                                        <option disabled style="color: #555; background-color: #ddd"># Despesas</option>
+                                        <option value="29">Desemprego</option>
+                                        <option value="30">Preço alto ou dificuldade financeira</option>
+                                        <option value="31">Cliente inadimplente</option>
+                                        <option disabled style="color: #555; background-color: #ddd"># Cobrança</option>
+                                        <option value="32">Fatura sem desconto na assinatura</option>
+                                        <option value="33">Reajuste de plano ou aumento de impostos</option>
+                                        <option value="34">Fim de degrau</option>
+                                        <option value="36">Serviços inclusos (SVA Fixo, BL e Pós)</option>
+                                        <option value="37">Cobrança de excedentes em ligaçãoes</option>
+                                        <option disabled style="color: #555; background-color: #ddd"># Migração de plano</option>
+                                        <option value="38">Deseja migrar para as ofertas de aquisição</option>
+                                        <option value="39">Deseja apenas a migração do plano downgrade</option>
+                                        <option value="40">Cancelamento de canais à lá carte ou ponto adicional</option>     
+                                        <option value="41">Cancelamento de canais à lá carte ou ponto adicional</option>  
+                                        <option disabled style="color: #555; background-color: #ddd"># Titular</option>
+                                        <option value="42">Falecimento do Titular</option>
+                                        <option value="42">Transferência de titularidade</option>
+                                    </select>                                 
+                           
+                                    <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example">
+                                        <option selected disabled>Finalização</option>
+                                        <option value="1">Retido</option>
+                                        <option value="2">Cancelado</option>
+                                        <option value="2">Transferido</option>
+                                    </select>
+                                    
+                                    <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example">
+                                        <option selected disabled>Transferido para N2?</option>
+                                        <option value="1">Sim</option>
+                                        <option value="2">Não</option>
+                                        <option value="2">N/A</option>
+                                    </select>
+                                    
+                                    <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example">
+                                        <option selected disabled>Oferta aplicada?</option>
+                                        <option value="1">Sim</option>
+                                        <option value="2">Não</option>
+                                    </select>
 
-            <!-- Sales Chart Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-light text-center rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Worldwide Sales</h6>
-                                <a href="">Show All</a>
-                            </div>
-                            <canvas id="worldwide-sales"></canvas>
+                                    <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example">
+                                        <option selected disabled>Multa aplicada?</option>
+                                        <option value="1">Sim</option>
+                                        <option value="2">Não</option>
+                                    </select>
+
+                                    <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example">
+                                        <option selected disabled>Perfilou NBA?</option>
+                                        <option value="1">Sim</option>
+                                        <option value="2">Não</option>
+                                    </select>    
+                                </div>
+                               
+                                <button type="submit" class="btn btn-primary">Enviar</button>
+                            </form>
                         </div>
                     </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-light text-center rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Salse & Revenue</h6>
-                                <a href="">Show All</a>
-                            </div>
-                            <canvas id="salse-revenue"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Sales Chart End -->
 
-
-            <!-- Recent Sales Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-light text-center rounded p-4">
-                    <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h6 class="mb-0">Recent Salse</h6>
-                        <a href="">Show All</a>
-                    </div>
-                    <div class="table-responsive">
-                        <table class="table text-start align-middle table-bordered table-hover mb-0">
-                            <thead>
-                                <tr class="text-dark">
-                                    <th scope="col"><input class="form-check-input" type="checkbox"></th>
-                                    <th scope="col">Date</th>
-                                    <th scope="col">Invoice</th>
-                                    <th scope="col">Customer</th>
-                                    <th scope="col">Amount</th>
-                                    <th scope="col">Status</th>
-                                    <th scope="col">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <!-- Recent Sales End -->
-
-
-            <!-- Widgets Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-12 col-md-6 col-xl-4">
-                        <div class="h-100 bg-light rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-2">
-                                <h6 class="mb-0">Messages</h6>
-                                <a href="">Show All</a>
-                            </div>
-                            <div class="d-flex align-items-center border-bottom py-3">
-                                <img class="rounded-circle flex-shrink-0" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 justify-content-between">
-                                        <h6 class="mb-0">Jhon Doe</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                    <span>Short message goes here...</span>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center border-bottom py-3">
-                                <img class="rounded-circle flex-shrink-0" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 justify-content-between">
-                                        <h6 class="mb-0">Jhon Doe</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                    <span>Short message goes here...</span>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center border-bottom py-3">
-                                <img class="rounded-circle flex-shrink-0" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 justify-content-between">
-                                        <h6 class="mb-0">Jhon Doe</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                    <span>Short message goes here...</span>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center pt-3">
-                                <img class="rounded-circle flex-shrink-0" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 justify-content-between">
-                                        <h6 class="mb-0">Jhon Doe</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                    <span>Short message goes here...</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6 col-xl-4">
-                        <div class="h-100 bg-light rounded p-4">
+                    <div class="col-sm-12 col-xl-3">
+                        <div class="bg-light rounded h-100 p-4">
                             <div class="d-flex align-items-center justify-content-between mb-4">
                                 <h6 class="mb-0">Calender</h6>
                                 <a href="">Show All</a>
                             </div>
-                            <div id="calender"></div>
+                            <div id="calender"></div>   
                         </div>
                     </div>
-                    <div class="col-sm-12 col-md-6 col-xl-4">
-                        <div class="h-100 bg-light rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">To Do List</h6>
-                                <a href="">Show All</a>
-                            </div>
-                            <div class="d-flex mb-2">
-                                <input class="form-control bg-transparent" type="text" placeholder="Enter task">
-                                <button type="button" class="btn btn-primary ms-2">Add</button>
-                            </div>
-                            <div class="d-flex align-items-center border-bottom py-2">
-                                <input class="form-check-input m-0" type="checkbox">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 align-items-center justify-content-between">
-                                        <span>Short task goes here...</span>
-                                        <button class="btn btn-sm"><i class="fa fa-times"></i></button>
-                                    </div>
+                    <div class="col-sm-12 col-xl-4">
+                        <div class="bg-light rounded h-100 p-4">
+                            <nav>
+                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab"
+                                        data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home"
+                                        aria-selected="true">Dicas</button>
+                                    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab"
+                                        data-bs-target="#nav-profile" type="button" role="tab"
+                                        aria-controls="nav-profile" aria-selected="false">Profile</button>
+                                    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab"
+                                        data-bs-target="#nav-contact" type="button" role="tab"
+                                        aria-controls="nav-contact" aria-selected="false">Contact</button>
                                 </div>
-                            </div>
-                            <div class="d-flex align-items-center border-bottom py-2">
-                                <input class="form-check-input m-0" type="checkbox">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 align-items-center justify-content-between">
-                                        <span>Short task goes here...</span>
-                                        <button class="btn btn-sm"><i class="fa fa-times"></i></button>
-                                    </div>
+                            </nav>
+                            <div class="tab-content pt-3" id="nav-tabContent">
+                                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                                    TUTORIAL FIBRA 
+                                    <p>lorem ipsukm dolor iet nupsem dargs.</p>
                                 </div>
-                            </div>
-                            <div class="d-flex align-items-center border-bottom py-2">
-                                <input class="form-check-input m-0" type="checkbox" checked>
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 align-items-center justify-content-between">
-                                        <span><del>Short task goes here...</del></span>
-                                        <button class="btn btn-sm text-primary"><i class="fa fa-times"></i></button>
-                                    </div>
+                                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                    Sanctus vero sit kasd sea gubergren takimata consetetur elitr elitr, consetetur sadipscing takimata ipsum dolores. Accusam duo accusam et labore ea elitr ipsum tempor sit, dolore aliquyam ipsum sit amet sit. Et dolore ipsum labore invidunt rebum. Sed dolore gubergren sanctus vero diam lorem rebum elitr, erat diam dolor clita.
                                 </div>
-                            </div>
-                            <div class="d-flex align-items-center border-bottom py-2">
-                                <input class="form-check-input m-0" type="checkbox">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 align-items-center justify-content-between">
-                                        <span>Short task goes here...</span>
-                                        <button class="btn btn-sm"><i class="fa fa-times"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center pt-2">
-                                <input class="form-check-input m-0" type="checkbox">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 align-items-center justify-content-between">
-                                        <span>Short task goes here...</span>
-                                        <button class="btn btn-sm"><i class="fa fa-times"></i></button>
-                                    </div>
+                                <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                                    Sit consetetur eirmod lorem ea magna sadipscing ipsum elitr invidunt, dolores lorem erat ipsum ut aliquyam eos lorem sed. Nonumy aliquyam ea justo eos dolores dolores duo dolores. Aliquyam dolor sea dolores sit takimata no erat vero. At lorem justo tempor lorem duo, stet kasd aliquyam ipsum voluptua labore at.
                                 </div>
                             </div>
                         </div>
+                    </div>   
+                        
                     </div>
-                </div>
+                    </div>     
+                </div>                
             </div>
-            <!-- Widgets End -->
+            <!-- Form End -->
 
 
             <!-- Footer Start -->
